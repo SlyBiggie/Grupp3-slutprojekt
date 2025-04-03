@@ -3,13 +3,14 @@
 # Grit Message - Interactive Message Board
 
 ## Overview
-Grit Message is an interactive message board application that allows users to post messages, engage with content through likes/dislikes, and utilize features like searching, pinning, and theme customization.
+Grit Message is an interactive message board application that allows users to post messages, engage with content through likes/dislikes, and utilize features like searching, pinning, and theme customization. This project offers a smooth, real-time experience with intuitive animations and moderative tools.
 
 ---
 
 ## Features
 ### Message Posting
 - Share your thoughts with a username and message content.
+- Messages are instantly saved and posted on the board. 
 
 ### Interactive Engagement
 - Like or dislike messages with visual feedback.
