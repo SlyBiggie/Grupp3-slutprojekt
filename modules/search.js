@@ -1,6 +1,4 @@
-/**
- * Simple search functionality for message filtering (Linns feature)
- */
+// Simple search functionality for message filtering (Linns feature)
 
 export function initSearch() {
   const searchInput = document.createElement("input");
@@ -17,9 +15,8 @@ export function initSearch() {
   searchInput.addEventListener("input", filterMessages);
 }
 
-/**
- * Filter messages based on search input value
- */
+// Filter messages based on search input value
+
 function filterMessages() {
   const searchTerm = document
     .getElementById("message-search")

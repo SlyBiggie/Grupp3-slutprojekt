@@ -1,27 +1,27 @@
 .message-footer {
-    position: absolute;
-    bottom: 10px;
-    left: 10px;
-  }
-  
-  .pin-button {
-    font-size: 0.85rem;
-    font-weight: bold;
-    background: none;
-    border: none;
-    color: #444;
-    cursor: pointer;
-    padding: 2px 6px;
-    border-radius: 4px;
-    transition: background-color 0.2s ease, color 0.2s ease;
-  }
-  
-  .pinned {
-    border: 2px solid gold;
-    background-color: #fff9c4;
-    box-shadow: 0 0 6px rgba(255, 215, 0, 0.6);
-  }
-  
-  .pinned .pin-button {
-    color: goldenrod;
-  }
+  position: absolute;
+  bottom: 10px;
+  left: 10px;
+}
+
+.pin-button {
+  font-size: 0.85rem;
+  font-weight: bold;
+  background: none;
+  border: none;
+  color: #444;
+  cursor: pointer;
+  padding: 2px 6px;
+  border-radius: 4px;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.pinned {
+  border: 2px solid gold;
+  background-color: #fff9c4;
+  box-shadow: 0 0 6px rgba(255, 215, 0, 0.6);
+}
+
+.pinned .pin-button {
+  color: goldenrod;
+}

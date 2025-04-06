@@ -8,6 +8,9 @@ Grit Message is an interactive message board application that allows users to po
 ---
 
 ## Features
+### Log in
+- Log in when using the webbsite.
+
 ### Message Posting
 - Share your thoughts with a username and message content.
 - Messages are instantly saved and posted on the board. 
@@ -44,40 +47,41 @@ Grit Message is an interactive message board application that allows users to po
 
 ---
 
-## Installation and Setup
-1. Clone the repository:
-   ```bash
-   git clone https://github.com/thealindsjo/fe24-versionshantering-gritsquare-grupp3
-   ```
-2. Open the project in your favorite code editor.
-3. Launch a local server:
-   ```bash
-   npm start
-   ```
-4. Open in your browser:
-   ```
-   http://localhost:5000
-   ```
-
----
-
 ## Project Structure
 ```
-├── modules               # JavaScript modules for different functionality
+├── audio
+│   └── pop-feature.mp3
+├── css
+│   ├── aboutUs.css        # css for about us page
+│   ├── contacts.css       # css for contacts page
+│   ├── home.css           # css for home page
+│   ├── login.css          # css for login page
+│   ├── pin.css            # css for pin feature
+│   ├── shake.css          # css for shake feature
+│   └── style.css          # General style
+├── img
+├── modules             # JavaScript modules for different functionality
+│   ├── auth.js            # Log in
 │   ├── display.js         # Handles message rendering
 │   ├── firebase.js        # Database operations
+│   ├── main.js            # Core application
 │   ├── pin.js             # Message pinning functionality
 │   ├── search.js          # Message filtering
+│   ├── shake.js           # Handles shake when messages are removed
 │   └── theme.js           # Dark/light mode implementation
-└── index.html            # Main HTML file
+├── index.html          # Main HTML file
+├── home.html           # Messageboard HTML file
+├── contacts.html       # Contacts HTML file
+├── aboutUs.html        # About us HTML file
 ```
 
 ---
 
 ## Usage
 ### Post a Message
-1. Enter your name and message in the form.
-2. Click "Lägg till" to submit.
+1. Log in.
+2. Enter your name and message in the form.
+3. Click "Lägg till" to submit.
 
 ### Interact with Messages
 - Click the heart icon to like a message.
@@ -99,6 +103,12 @@ Grit Message is an interactive message board application that allows users to po
 - Linn - Developer
 - Kim - Developer
 - Sylvester - Developer
+
+- Matti 2 features
+- Leon 1 feature
+- Hampus 1 feature
+- Alrik 1 feature
+- Ida 1 feature
 
 ## License
 This project is licensed under the MIT License.

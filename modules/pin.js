@@ -1,11 +1,14 @@
-import { updatePinStatusFirebase } from './firebase.js'; // ✅ Add this at the top
+// Leons Feature
+
+import { updatePinStatusFirebase } from "./firebase.js";
 
 export function addPinFunctionality(messageContainer, messageDiv) {
   const pinButton = document.createElement("button");
   pinButton.className = "pin-button";
-  pinButton.innerHTML = '<i class="fa-solid fa-thumbtack" style="transform: rotate(45deg);"></i> Pin';
+  pinButton.innerHTML =
+    '<i class="fa-solid fa-thumbtack" style="transform: rotate(45deg);"></i> Pin';
 
-  let isPinned = messageContainer.dataset.pinned === "true"; // Get initial pinned state
+  let isPinned = messageContainer.dataset.pinned === "true";
   let originalNextSibling = null;
 
   // 🧠 Place pinned message on top if it was pinned in DB
@@ -25,7 +28,8 @@ export function addPinFunctionality(messageContainer, messageDiv) {
       pinButton.innerHTML = '<i class="fa-solid fa-thumbtack"></i> Unpin';
     } else {
       messageContainer.classList.remove("pinned");
-      pinButton.innerHTML = '<i class="fa-solid fa-thumbtack" style="transform: rotate(45deg);"></i> Pin';
+      pinButton.innerHTML =
+        '<i class="fa-solid fa-thumbtack" style="transform: rotate(45deg);"></i> Pin';
 
       if (
         originalNextSibling &&

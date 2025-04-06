@@ -3,86 +3,106 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="css/style.css" />
-    <script src="./modules/main.js" type="module" defer></script>
+    <link rel="stylesheet" href="css/login.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+    />
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
       integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
       crossorigin="anonymous"
     />
-    <link rel="icon" type="image/png" href="img/rocketchat-brands.svg">
-    <title>Grit Message</title>
+    <link rel="icon" type="image/png" href="img/rocketchat-brands.svg" />
+    <title>Log In</title>
   </head>
-
   <body>
-    <header>
-      <nav>
-        <div class="nav_">
-          <div class="header-container">
-            <div class="logo-container">
-              <a href="./index.html" class="logo-link">
-                <i class="fa-brands fa-rocketchat logo"></i>
-                <h1 id="logo-text">Grit Message</h1>
-              </a>
-            </div>                      
-          </div>
-          <div class="toggleMenu">
-            <i class="fas fa-bars"></i>
-          </div>
-          <div class="menu">
-            <div><a href="./index.html">Home</a></div>
-            <div><a href="./contacts.html">Contacts</a></div>
-            <div><a href="./aboutUs.html">About Us</a></div>
-            <div><a href="./login.html">Log Out</a></div>
+    <div class="container">
+      <div class="screen">
+        <div class="screen__content">
+          <form class="login">
+            <div class="login__field">
+              <i class="login__icon fas fa-user"></i>
+              <input
+                type="text"
+                class="login__input"
+                placeholder="User name / Email"
+              />
+            </div>
+            <div class="login__field">
+              <i class="login__icon fas fa-lock"></i>
+              <input
+                type="password"
+                class="login__input"
+                placeholder="Password"
+              />
+            </div>
+            <button class="button login__submit">
+              <span class="button__text">Log in</span>
+              <i class="button__icon fas fa-chevron-right"></i>
+            </button>
+          </form>
+          <div class="social-login">
+            <div class="social-icons">
+              <a
+                href="https://www.facebook.com/"
+                target="_blank"
+                class="social-login__icon fab fa-facebook"
+              ></a>
+              <a
+                href="https://x.com/"
+                target="_blank"
+                class="social-login__icon fab fa-twitter"
+              ></a>
+              <a
+                href="https://www.instagram.com/"
+                target="_blank"
+                class="social-login__icon fab fa-instagram"
+              ></a>
+            </div>
           </div>
         </div>
-      </nav>
-    </header>
-    
-    <main>
-      <div class="content">
-        <div id="controls-container">
-          <section id="addMessageSection">
-            <form id="addMessage">
-              <label for="namn">Namn</label>
-              <input id="user-name" type="text" name="name" placeholder="Ditt namn..." required />
-              <p id="char-counter">0/200 characters</p>
-              <label for="meddelande">Meddelande</label>
-              <textarea
-                id="user-message"
-                name="message"
-                placeholder="Text..."
-                required
-              ></textarea>
-              <button id="submitButton" type="submit">Lägg till</button>
-            </form>
-          </section>
-        </div>
-  
-        <section id="board">
-          <div id="errorMessage" class="hidden"></div>
-          <div id="messageColumn">
-          </div>
-        </section>
-      </div>
-    </main>
-    <footer>
-      <div class="footer-container">
-        <p>&copy; 2025 Grupp 3 - All Rights Reserved</p>
-        <div class="social-icons">
-          <a href="https://facebook.com" target="_blank"
-            ><i class="fab fa-facebook-f"></i
-          ></a>
-          <a href="https://twitter.com" target="_blank"
-            ><i class="fab fa-twitter"></i
-          ></a>
-          <a href="https://instagram.com" target="_blank"
-            ><i class="fab fa-instagram"></i
-          ></a>
+        <div class="screen__background">
+          <span
+            class="screen__background__shape screen__background__shape4"
+          ></span>
+          <span
+            class="screen__background__shape screen__background__shape3"
+          ></span>
+          <span
+            class="screen__background__shape screen__background__shape2"
+          ></span>
+          <span
+            class="screen__background__shape screen__background__shape1"
+          ></span>
         </div>
       </div>
-    </footer>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
+    </div>
   </body>
+  <script type="module">
+    import { loginUser } from "./modules/auth.js";
+
+    document
+      .querySelector(".login")
+      .addEventListener("submit", async function (event) {
+        event.preventDefault();
+
+        const username = document.querySelector(
+          ".login__input[type='text']"
+        ).value;
+        const password = document.querySelector(
+          ".login__input[type='password']"
+        ).value;
+
+        const success = await loginUser(username, password);
+
+        if (success) {
+          localStorage.setItem("loggedInUser", username);
+          window.location.href = "home.html";
+        } else {
+          alert("Invalid login. Please try again.");
+        }
+      });
+  </script>
 </html>
